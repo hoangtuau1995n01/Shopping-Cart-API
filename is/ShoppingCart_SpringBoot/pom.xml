@@ -8,11 +8,10 @@
 	<name>MobileStore Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.3.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
-	</parent>
+       		<groupId>edu.fa.topgun.is</groupId>
+        	<artifactId>is</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+    	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -93,16 +92,17 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>edu.fa.topgun.common</groupId>
-			<artifactId>Common</artifactId>
-			<version>1.0</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>edu.fa.topgun.common</groupId>
+			<artifactId>Common</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -115,6 +115,14 @@
 				<configuration>
 					<path>/</path>
 					<port>8899</port>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>

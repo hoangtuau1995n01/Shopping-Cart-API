@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.fa.topgun.common.utils.Utilites;
 import edu.fa.topgun.shoppingcart.dto.ProductDto;
 import edu.fa.topgun.shoppingcart.entity.Category;
 import edu.fa.topgun.shoppingcart.service.CategoryService;
@@ -63,17 +62,14 @@ public class ProductController {
     Category category = categoryService.findByCategoryId(id);
     return productService.findByCategoryId(category, page, sort);
   }
-
+  
   /**
    * getTotalPage.
-   * 
-   * @param id
-   *          int
+   * @param id int
    * @return
    */
   @GetMapping("/get-total-page")
-  public int getTotalPage(@RequestParam(
-      name = "id", required = true) int id) {
+  public int getTotalPage(@RequestParam(name = "id", required = true) int id) {
     Category category = categoryService.findByCategoryId(id);
     return productService.getTotalPage(category);
   }
@@ -86,12 +82,6 @@ public class ProductController {
   @GetMapping("/get-all")
   public List<ProductDto> getAllProduct(@RequestParam(
       name = "page", required = true) int page, String sort) {
-    List<ProductDto> productDtos = productService.listProduct(page, sort);
-    Utilites utilites = new Utilites();
-    for (ProductDto productDto : productDtos) {
-      int id = utilites.setProductId(productDto.getIdproduct());
-      productDto.setIdproduct(id);
-    }
     return productService.listProduct(page, sort);
   }
 

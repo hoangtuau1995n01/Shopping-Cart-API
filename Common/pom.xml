@@ -4,7 +4,7 @@
 
   <groupId>edu.fa.topgun.common</groupId>
   <artifactId>Common</artifactId>
-  <version>1.0.0</version>
+  <version>SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Common</name>
   <url>http://maven.apache.org</url>

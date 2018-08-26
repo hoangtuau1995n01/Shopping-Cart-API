@@ -2,6 +2,6 @@ package edu.fa.topgun.common.utils;
 
 public class Utilites1 {
   public int setProductId(int id) {
-    return 5000 + id;
+    return 50001 + id;
   }
 }

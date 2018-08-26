@@ -21,4 +21,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+	<build>
+		<finalName>${project.artifactId}-${date}</finalName>
+	</build>
 </project>
